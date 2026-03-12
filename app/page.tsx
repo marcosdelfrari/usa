@@ -16,9 +16,9 @@ export default function Home() {
         <Hero />
       </div>
       <UsaHelpSection />
-      <HowWeWorkSection />
-      <WhoIsUsaFor />
 
+      <WhoIsUsaFor />
+      <HowWeWorkSection />
       <BenefitsSection />
       <FamilySection />
       <Footer />

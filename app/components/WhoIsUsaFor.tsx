@@ -14,7 +14,7 @@ const cards = [
   {
     title: "Todas as idades",
     description:
-      "Não importa a sua idade: cuidamos dos tutores e dos pets com o mesmo compromisso. Do primeiro filhote ao pet idoso, oferecemos um atendimento acolhedor.",
+      "Não importa a idade do seu companheiro: cuidamos dele com todo carinho. Do filhote ao pet idoso, oferecemos um atendimento acolhedor e especializado.",
     icon: Building2,
   },
   {
