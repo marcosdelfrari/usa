@@ -14,7 +14,7 @@ export function FamilySection() {
         <div>
           {" "}
           <Image
-            src="/petsstatic.jpg"
+            src="/petsstatic.webp"
             alt="Pets felizes - ilustração de cães e gatos"
             width={1200}
             height={600}
