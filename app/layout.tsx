@@ -20,8 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${publicSans.variable} font-sans antialiased`}>
-        {children}
+      <body className={`${publicSans.variable} font-sans antialiased overflow-x-hidden w-full`}>
+        <div className="min-w-0 w-full overflow-x-clip">
+          {children}
+        </div>
       </body>
     </html>
   );

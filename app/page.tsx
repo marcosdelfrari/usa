@@ -9,9 +9,9 @@ import { WhoIsUsaFor } from "./components/WhoIsUsaFor";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full">
+    <div className="min-h-screen w-full overflow-x-hidden">
       {/* Header + Hero ocupam exatamente 100vh (primeira tela). No mobile a nav sobrepõe o hero. */}
-      <div className="relative flex h-screen flex-col">
+      <div className="relative flex h-screen min-w-0 flex-col overflow-x-hidden">
         <Header />
         <Hero />
       </div>

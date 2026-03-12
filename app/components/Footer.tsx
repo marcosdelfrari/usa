@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 
 // Dados de funcionamento simulados
 const HOURS = [
@@ -16,10 +16,8 @@ const HOURS = [
 ] as const;
 
 const SOCIAL_LINKS = [
-  { icon: Instagram, href: "#" },
-  { icon: Facebook, href: "#" },
-  { icon: Linkedin, href: "#" },
-  { icon: Youtube, href: "#" },
+  { icon: Instagram, href: "https://www.instagram.com/unidadedesaudeanimal", label: "Instagram" },
+  { icon: MessageCircle, href: "https://wa.me/5531982885745", label: "WhatsApp" },
 ];
 
 export function Footer() {
@@ -94,6 +92,9 @@ export function Footer() {
                   <a
                     key={i}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
                     className="p-2 border border-white/30 rounded-lg hover:bg-white hover:text-[#9f515e] transition-all duration-300"
                   >
                     <social.icon className="w-6 h-6" />
@@ -104,10 +105,12 @@ export function Footer() {
               {/* Contatos Gigantes */}
               <div className="flex flex-col items-start lg:items-end gap-0">
                 <a
-                  href="tel:+5531999991234"
+                  href="https://wa.me/5531982885745"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight hover:opacity-80 transition-opacity"
                 >
-                  (31) 99999-1234
+                  (31) 98288-5745
                 </a>
                 <a
                   href="mailto:contato@usa.com.br"

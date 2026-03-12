@@ -28,7 +28,7 @@ export function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 flex h-[88px] w-full items-center justify-between bg-transparent px-6 md:relative md:top-auto md:left-auto md:right-auto md:shrink-0 md:bg-[#e8ddde] md:border-b md:border-[#e8ddde] md:px-10 lg:px-14">
+    <header className="absolute top-0 left-0 right-0 z-50 flex h-[88px] w-full min-w-0 items-center justify-between overflow-hidden bg-transparent px-6 md:relative md:top-auto md:left-auto md:right-auto md:shrink-0 md:bg-[#e8ddde] md:border-b md:border-[#e8ddde] md:px-10 lg:px-14">
       {/* Logo */}
       <Link
         href="/"
@@ -62,7 +62,9 @@ export function Header() {
       {/* Botão de Contato */}
       <div className="hidden md:flex items-center gap-4">
         <a
-          href="#contato"
+          href="https://wa.me/5531982885745"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group flex items-center gap-2 rounded-full bg-[#9f515e] px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-[#9f515e]/30 transition hover:bg-[#7d4049] hover:-translate-y-0.5"
         >
           <MessageCircle className="h-4 w-4" />
@@ -125,7 +127,9 @@ export function Header() {
               </Link>
             ))}
             <a
-              href="#contato"
+              href="https://wa.me/5531982885745"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={closeMenu}
               className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-[#9f515e] px-6 py-4 text-lg font-bold text-white shadow-md transition active:bg-[#7d4049]"
             >
