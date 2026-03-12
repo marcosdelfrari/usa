@@ -6,12 +6,13 @@ import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 // Dados de funcionamento simulados
 const HOURS = [
-  { time: "08:00 – 18:00", label: "Seg" },
-  { time: "08:00 – 18:00", label: "Ter" },
-  { time: "08:00 – 18:00", label: "Qua" },
-  { time: "08:00 – 18:00", label: "Qui" },
-  { time: "08:00 – 18:00", label: "Sex" },
-  { time: "08:00 – 12:00", label: "Sáb" },
+  { time: "09:00 – 21:00", label: "Seg" },
+  { time: "09:00 – 21:00", label: "Ter" },
+  { time: "09:00 – 21:00", label: "Qua" },
+  { time: "09:00 – 21:00", label: "Qui" },
+  { time: "09:00 – 21:00", label: "Sex" },
+  { time: "09:00 – 21:00", label: "Sáb" },
+  { time: "09:00 – 21:00", label: "Dom" },
 ] as const;
 
 const SOCIAL_LINKS = [

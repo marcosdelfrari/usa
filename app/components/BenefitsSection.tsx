@@ -4,22 +4,22 @@ import { Clock, Smile, Heart, ShieldCheck } from "lucide-react";
 
 const benefits = [
   {
-    title: "Atendimento humanizado",
+    title: "Internações 24h",
     description:
-      "Tratamos você e seu pet com respeito e atenção. Nossa equipe está preparada para ouvir suas dúvidas, explicar procedimentos e orientar sobre os melhores cuidados para o seu animal.",
-    icon: Smile,
-  },
-  {
-    title: "Cuidado com o seu pet",
-    description:
-      "Consultas, vacinas, acompanhamento e orientações em um só lugar. Nosso objetivo é que seu pet tenha saúde e bem-estar, e que você se sinta seguro e acolhido.",
+      "Única clínica da cidade com estrutura completa para internação. Seu pet monitorado e cuidado com todo o carinho, dia e noite.",
     icon: ShieldCheck,
   },
   {
-    title: "Perto de você em Matozinhos",
+    title: "Pronto Atendimento",
     description:
-      "Atuamos em toda a região de Matozinhos, facilitando o acesso a serviços de saúde animal. Menos deslocamento, mais praticidade e cuidado perto de casa.",
+      "Veterinário na clínica 24h para emergências. Atendimento imediato: é só chegar que seu melhor amigo será acolhido na hora.",
     icon: Heart,
+  },
+  {
+    title: "Matozinhos e Região",
+    description:
+      "Estamos em Matozinhos, mas atendemos rapidamente quem vem de Capim Branco, Pedro Leopoldo e toda a região vizinha.",
+    icon: Smile,
   },
 ] as const;
 
@@ -50,9 +50,9 @@ export function BenefitsSection() {
               key={title}
               className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-8 transition hover:-translate-y-1"
             >
-              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-rose-50 opacity-50 transition group-hover:scale-150 group-hover:bg-[#9f515e]/10"></div>
+              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#e8ddde] opacity-50 transition group-hover:scale-150 group-hover:bg-[#9f515e]/10"></div>
 
-              <div className="relative mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#9f515e] to-[#8a424e] text-white shadow-lg shadow-rose-200">
+              <div className="relative mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#9f515e] to-[#7d4049] text-white shadow-lg shadow-[#9f515e]/30">
                 <Icon className="h-8 w-8" />
               </div>
 

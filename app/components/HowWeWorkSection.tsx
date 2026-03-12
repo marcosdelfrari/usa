@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { CircleCheck, ArrowDown } from "lucide-react";
 
 const steps = [
   {
-    title: "Agende ou chegue",
+    title: "É só chegar",
     description:
-      "Entre em contato ou venha até nós. Explicamos nossos serviços, horários e como podemos ajudar no cuidado do seu pet. Você escolhe a melhor forma de começar.",
+      "Não precisa agendar: aqui o atendimento é imediato. Funcionamos todos os dias das 9:00 às 21:00 para cuidar do seu pet quando ele precisar.",
   },
   {
     title: "Atendimento personalizado",
@@ -27,12 +26,12 @@ export function HowWeWorkSection() {
       id="como-funciona"
       className="w-full bg-white px-6 py-24 md:px-10 lg:px-14 xl:py-32"
     >
-      <div className="mx-auto max-w-7xl bg-[#fdf2f4] rounded-3xl p-8">
+      <div className="mx-auto max-w-7xl bg-[#e8ddde] rounded-3xl p-8">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24">
           {/* Imagem */}
           <div className="relative order-2 lg:order-1 flex justify-center">
             <Image
-              src="/CAT.png"
+              src="/cat.webp"
               alt="Cachorro feliz sendo atendido"
               width={200}
               height={200}
@@ -52,22 +51,29 @@ export function HowWeWorkSection() {
               </h2>
             </div>
 
-            <div className="space-y-12 border-l-2 border-rose-200 pl-8 md:pl-12 relative">
+            <div className="relative pl-10 md:pl-12">
+              {/* Linha vertical centralizada nos círculos (centro = 14px) */}
+              <div className="absolute left-[14px] top-0 bottom-0 w-0.5 bg-[#5c2d35]" aria-hidden />
+              <div className="space-y-12">
               {steps.map(({ title, description }, i) => (
-                <div key={title} className="relative group">
-                  <div className="absolute -left-[41px] top-1 md:-left-[57px] flex h-6 w-6 items-center justify-center rounded-full bg-[#9f515e] ring-4 ring-rose-100 transition group-hover:scale-125 group-hover:bg-[#8a424e]">
+                <div key={title} className="relative group flex gap-6">
+                  {/* Círculo alinhado à linha */}
+                  <div className="absolute left-0 top-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#9f515e] ring-4 ring-[#5c2d35] ring-offset-4 ring-offset-[#e8ddde] shadow-md transition group-hover:scale-110 group-hover:bg-[#7d4049]">
                     <span className="text-xs font-bold text-white">
                       {i + 1}
                     </span>
                   </div>
-                  <h3 className="mb-3 text-2xl font-bold text-gray-900 group-hover:text-[#9f515e] transition">
-                    {title}
-                  </h3>
-                  <p className="text-lg leading-relaxed text-gray-600">
-                    {description}
-                  </p>
+                  <div className="min-w-0 pl-0 pt-0.5">
+                    <h3 className="mb-3 text-2xl font-bold text-gray-900 group-hover:text-[#9f515e] transition">
+                      {title}
+                    </h3>
+                    <p className="text-lg leading-relaxed text-gray-700">
+                      {description}
+                    </p>
+                  </div>
                 </div>
               ))}
+              </div>
             </div>
           </div>
         </div>

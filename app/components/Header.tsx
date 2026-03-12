@@ -28,7 +28,7 @@ export function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 flex h-[88px] w-full items-center justify-between bg-rose-50 px-6  border-b border-rose-100 md:px-10 lg:px-14">
+    <header className="z-50 flex h-[88px] w-full items-center justify-between bg-[#e8ddde] px-6 border-b border-[#e8ddde] md:px-10 lg:px-14">
       {/* Logo */}
       <Link
         href="/"
@@ -52,7 +52,7 @@ export function Header() {
           <Link
             key={href}
             href={href}
-            className="text-[15px] font-bold text-[#9f515e] transition hover:text-[#8a424e]"
+            className="text-[15px] font-bold text-[#9f515e] transition hover:text-[#7d4049]"
           >
             {label}
           </Link>
@@ -63,7 +63,7 @@ export function Header() {
       <div className="hidden md:flex items-center gap-4">
         <a
           href="#contato"
-          className="group flex items-center gap-2 rounded-full bg-[#9f515e] px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-rose-200 transition hover:bg-[#8a424e] hover:-translate-y-0.5"
+          className="group flex items-center gap-2 rounded-full bg-[#9f515e] px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-[#9f515e]/30 transition hover:bg-[#7d4049] hover:-translate-y-0.5"
         >
           <MessageCircle className="h-4 w-4" />
           Fale conosco
@@ -82,7 +82,7 @@ export function Header() {
 
       {/* Overlay do menu mobile - tela cheia */}
       <div
-        className={`fixed inset-0 z-[100] bg-rose-50 md:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-[100] bg-[#e8ddde] md:hidden transition-opacity duration-300 ${
           menuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -91,7 +91,7 @@ export function Header() {
       >
         <div className="flex h-full w-full flex-col">
           {/* Cabeçalho do menu: logo + X */}
-          <div className="flex h-[88px] items-center justify-between px-6 border-b border-rose-100">
+          <div className="flex h-[88px] items-center justify-between px-6 border-b border-[#e8ddde]">
             <Link href="/" onClick={closeMenu} className="flex shrink-0">
               <Image
                 src="/logo-rosa.png"
@@ -105,7 +105,7 @@ export function Header() {
             <button
               type="button"
               onClick={closeMenu}
-              className="flex h-12 w-12 items-center justify-center rounded-full text-[#9f515e] hover:bg-rose-100 transition-colors"
+              className="flex h-12 w-12 items-center justify-center rounded-full text-[#9f515e] hover:bg-white/50 transition-colors"
               aria-label="Fechar menu"
             >
               <X className="h-8 w-8" />
@@ -119,7 +119,7 @@ export function Header() {
                 key={href}
                 href={href}
                 onClick={closeMenu}
-                className="rounded-xl py-4 px-4 text-xl font-bold text-[#9f515e] transition hover:bg-rose-100 active:bg-rose-200"
+                className="rounded-xl py-4 px-4 text-xl font-bold text-[#9f515e] transition hover:bg-white/50 active:bg-white/70"
               >
                 {label}
               </Link>
@@ -127,7 +127,7 @@ export function Header() {
             <a
               href="#contato"
               onClick={closeMenu}
-              className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-[#9f515e] px-6 py-4 text-lg font-bold text-white shadow-md transition active:bg-[#8a424e]"
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-[#9f515e] px-6 py-4 text-lg font-bold text-white shadow-md transition active:bg-[#7d4049]"
             >
               <MessageCircle className="h-5 w-5" />
               Fale conosco

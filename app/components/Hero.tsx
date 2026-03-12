@@ -25,20 +25,20 @@ export function Hero() {
         {/* Coluna direita: Texto */}
         <div className="flex flex-col justify-center px-6 py-12 text-white md:order-1 md:px-12 lg:px-20 lg:py-24">
           <h1 className="mb-6 max-w-lg text-3xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl lg:leading-[1.1]">
-            Amor que <span className="text-rose-200">cura</span>, cuidado que{" "}
-            <span className="text-rose-200">protege</span>.
+            Amor que <span className="text-[#e8ddde]">cura</span>, cuidado que{" "}
+            <span className="text-[#e8ddde]">protege</span>.
           </h1>
 
           <p className="mb-8 max-w-md text-base text-white/90 md:text-xl font-light leading-relaxed">
-            A excelência veterinária que seu melhor amigo merece. Consultas,
-            vacinas e todo o carinho que ele precisa, bem pertinho de você em
-            Matozinhos.
+            A excelência veterinária que seu melhor amigo merece. Internações 24h,
+            consultas e vacinas. Estamos em Matozinhos e atendemos Capim Branco,
+            Pedro Leopoldo e região. Aberto todos os dias das 9:00 às 21:00.
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <a
               href="#contato"
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-base font-bold text-[#9f515e] shadow-lg shadow-rose-900/20 transition hover:bg-rose-50 hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-base font-bold text-[#9f515e] shadow-lg shadow-black/10 transition hover:bg-[#e8ddde] hover:shadow-xl hover:-translate-y-0.5"
             >
               Agendar agora
               <ArrowRight className="ml-2 h-5 w-5" />

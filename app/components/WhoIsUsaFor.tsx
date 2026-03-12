@@ -18,9 +18,9 @@ const cards = [
     icon: Building2,
   },
   {
-    title: "Região de Matozinhos",
+    title: "Matozinhos e Região",
     description:
-      "Atuamos em toda a região de Matozinhos, levando saúde animal perto de você. Facilitamos o acesso a consultas, orientações e cuidados para o seu pet.",
+      "Localizada em Matozinhos, a clínica atende com agilidade moradores de Capim Branco, Pedro Leopoldo e arredores. Cuidado perto de você.",
     icon: Bone,
   },
 ] as const;
@@ -57,9 +57,9 @@ export function WhoIsUsaFor() {
           {cards.map(({ title, description, icon: Icon }) => (
             <div
               key={title}
-              className="group flex flex-col rounded-2xl border border-gray-100 bg-white p-8 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-rose-100"
+              className="group flex flex-col rounded-2xl border border-gray-100 bg-white p-8 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#9f515e]/10"
             >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-rose-50 text-[#9f515e] transition group-hover:bg-[#9f515e] group-hover:text-white">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#e8ddde] text-[#9f515e] transition group-hover:bg-[#9f515e] group-hover:text-white">
                 <Icon className="h-8 w-8" />
               </div>
               <h3 className="mb-3 text-2xl font-bold text-gray-900">{title}</h3>
