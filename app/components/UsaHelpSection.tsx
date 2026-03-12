@@ -23,7 +23,7 @@ export function UsaHelpSection() {
 
         {/* Coluna direita: texto */}
         <div className="flex flex-col justify-center text-center lg:order-1 lg:text-left">
-          <div className="mb-6 inline-flex items-center justify-center gap-2 rounded-full bg-white/60 px-4 py-1.5 text-sm font-semibold text-[#9f515e] lg:justify-start lg:bg-transparent lg:px-0 lg:py-0">
+          <div className="mb-6 inline-flex items-center justify-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold text-[#9f515e] lg:justify-start bg-transparent lg:px-0 lg:py-0">
             <span className="hidden h-1.5 w-1.5 rounded-full bg-[#9f515e] lg:block"></span>
             Sobre a clínica
           </div>
