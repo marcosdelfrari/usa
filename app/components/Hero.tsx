@@ -5,10 +5,10 @@ import { ArrowRight, Phone } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#9f515e]">
-      <div className="mx-auto grid min-h-[auto] md:min-h-[70vh] w-full max-w-[1440px] grid-cols-1 md:grid-cols-2">
+    <section className="relative flex min-h-0 flex-1 w-full overflow-hidden bg-[#9f515e]">
+      <div className="mx-auto flex min-h-full w-full max-w-[1440px] flex-col md:grid md:grid-cols-2">
         {/* Coluna esquerda: Imagem */}
-        <div className="relative h-[300px] w-full md:order-2 md:h-full lg:min-h-[600px]">
+        <div className="relative min-h-0 flex-1 w-full md:order-2 md:h-full lg:min-h-[600px]">
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#9f515e] via-transparent to-transparent md:bg-gradient-to-l md:from-[#9f515e]/60" />
           <div className="relative h-full w-full">
             <Image
@@ -23,7 +23,7 @@ export function Hero() {
         </div>
 
         {/* Coluna direita: Texto */}
-        <div className="flex flex-col justify-center px-6 py-12 text-white md:order-1 md:px-12 lg:px-20 lg:py-24">
+        <div className="flex min-h-0 shrink-0 flex-col justify-center overflow-auto px-6 py-8 text-white md:order-1 md:px-12 md:py-12 lg:px-20 lg:py-24">
           <h1 className="mb-6 max-w-lg text-3xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl lg:leading-[1.1]">
             Amor que <span className="text-[#e8ddde]">cura</span>, cuidado que{" "}
             <span className="text-[#e8ddde]">protege</span>.

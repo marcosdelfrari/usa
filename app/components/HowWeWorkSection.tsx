@@ -51,28 +51,35 @@ export function HowWeWorkSection() {
               </h2>
             </div>
 
-            <div className="relative pl-10 md:pl-12">
-              {/* Linha vertical centralizada nos círculos (centro = 14px) */}
-              <div className="absolute left-[14px] top-0 bottom-0 w-0.5 bg-[#5c2d35]" aria-hidden />
+            {/* Timeline: coluna fixa para círculos + linha, depois conteúdo alinhado */}
+            <div className="relative">
+              <div
+                className="absolute left-5 top-0 bottom-0 w-0.5 bg-[#9f515e]"
+                aria-hidden
+              />
               <div className="space-y-12">
-              {steps.map(({ title, description }, i) => (
-                <div key={title} className="relative group flex gap-6">
-                  {/* Círculo alinhado à linha */}
-                  <div className="absolute left-0 top-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#9f515e] ring-4 ring-[#5c2d35] ring-offset-4 ring-offset-[#e8ddde] shadow-md transition group-hover:scale-110 group-hover:bg-[#7d4049]">
-                    <span className="text-xs font-bold text-white">
-                      {i + 1}
-                    </span>
+                {steps.map(({ title, description }, i) => (
+                  <div
+                    key={title}
+                    className="group relative flex items-start gap-4"
+                  >
+                    <div className="flex w-10 shrink-0 justify-center pt-0.5">
+                      <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#9f515e] ring-4 ring-[#9f515e] ring-offset-4 ring-offset-[#e8ddde] shadow-md transition group-hover:scale-110 group-hover:bg-[#7d4049]">
+                        <span className="text-xs font-bold text-white">
+                          {i + 1}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="mb-3 text-2xl font-bold text-gray-900 group-hover:text-[#9f515e] transition">
+                        {title}
+                      </h3>
+                      <p className="text-lg leading-relaxed text-gray-700">
+                        {description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="min-w-0 pl-0 pt-0.5">
-                    <h3 className="mb-3 text-2xl font-bold text-gray-900 group-hover:text-[#9f515e] transition">
-                      {title}
-                    </h3>
-                    <p className="text-lg leading-relaxed text-gray-700">
-                      {description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                ))}
               </div>
             </div>
           </div>

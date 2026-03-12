@@ -28,7 +28,7 @@ export function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="z-50 flex h-[88px] w-full items-center justify-between bg-[#e8ddde] px-6 border-b border-[#e8ddde] md:px-10 lg:px-14">
+    <header className="absolute top-0 left-0 right-0 z-50 flex h-[88px] w-full items-center justify-between bg-transparent px-6 md:relative md:top-auto md:left-auto md:right-auto md:shrink-0 md:bg-[#e8ddde] md:border-b md:border-[#e8ddde] md:px-10 lg:px-14">
       {/* Logo */}
       <Link
         href="/"
