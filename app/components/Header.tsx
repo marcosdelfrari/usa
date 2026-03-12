@@ -2,17 +2,33 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, Menu } from "lucide-react";
+import { MessageCircle, Menu, X } from "lucide-react";
+import { useState, useCallback, useEffect } from "react";
 
 const NAV_LINKS = [
-  { label: "Quem somos", href: "#who" },
-  { label: "Como funciona", href: "#how" },
-  { label: "Benefícios", href: "#benefits" },
+  { label: "Quem somos", href: "#quem-somos" },
+  { label: "Como funciona", href: "#como-funciona" },
+  { label: "Benefícios", href: "#beneficios" },
 ] as const;
 
 export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
-    <header className="sticky top-0 z-50 flex h-[88px] w-full items-center justify-between bg-rose-50 px-6 shadow-sm border-b border-rose-100 md:px-10 lg:px-14">
+    <header className="sticky top-0 z-50 flex h-[88px] w-full items-center justify-between bg-rose-50 px-6  border-b border-rose-100 md:px-10 lg:px-14">
       {/* Logo */}
       <Link
         href="/"
@@ -46,7 +62,7 @@ export function Header() {
       {/* Botão de Contato */}
       <div className="hidden md:flex items-center gap-4">
         <a
-          href="#contact"
+          href="#contato"
           className="group flex items-center gap-2 rounded-full bg-[#9f515e] px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-rose-200 transition hover:bg-[#8a424e] hover:-translate-y-0.5"
         >
           <MessageCircle className="h-4 w-4" />
@@ -54,10 +70,71 @@ export function Header() {
         </a>
       </div>
 
-      {/* Mobile Menu Button */}
-      <button className="flex items-center justify-center rounded-md p-2 text-[#9f515e] md:hidden">
+      {/* Botão Hambúrguer Mobile */}
+      <button
+        type="button"
+        onClick={() => setMenuOpen(true)}
+        className="flex items-center justify-center rounded-md p-2 text-[#9f515e] md:hidden"
+        aria-label="Abrir menu"
+      >
         <Menu className="h-7 w-7" />
       </button>
+
+      {/* Overlay do menu mobile - tela cheia */}
+      <div
+        className={`fixed inset-0 z-[100] bg-rose-50 md:hidden transition-opacity duration-300 ${
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        aria-hidden={!menuOpen}
+      >
+        <div className="flex h-full w-full flex-col">
+          {/* Cabeçalho do menu: logo + X */}
+          <div className="flex h-[88px] items-center justify-between px-6 border-b border-rose-100">
+            <Link href="/" onClick={closeMenu} className="flex shrink-0">
+              <Image
+                src="/logo-rosa.png"
+                alt="USA"
+                width={120}
+                height={120}
+                className="h-16 w-16 object-contain"
+                unoptimized
+              />
+            </Link>
+            <button
+              type="button"
+              onClick={closeMenu}
+              className="flex h-12 w-12 items-center justify-center rounded-full text-[#9f515e] hover:bg-rose-100 transition-colors"
+              aria-label="Fechar menu"
+            >
+              <X className="h-8 w-8" />
+            </button>
+          </div>
+
+          {/* Links do menu */}
+          <nav className="flex flex-1 flex-col justify-center gap-2 px-6 py-8">
+            {NAV_LINKS.map(({ label, href }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={closeMenu}
+                className="rounded-xl py-4 px-4 text-xl font-bold text-[#9f515e] transition hover:bg-rose-100 active:bg-rose-200"
+              >
+                {label}
+              </Link>
+            ))}
+            <a
+              href="#contato"
+              onClick={closeMenu}
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-[#9f515e] px-6 py-4 text-lg font-bold text-white shadow-md transition active:bg-[#8a424e]"
+            >
+              <MessageCircle className="h-5 w-5" />
+              Fale conosco
+            </a>
+          </nav>
+        </div>
+      </div>
     </header>
   );
 }

@@ -41,7 +41,7 @@ export function UsaHelpSection() {
 
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
             <a
-              href="#who"
+              href="#quem-somos"
               className="inline-flex items-center justify-center rounded-full bg-[#9f515e] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-rose-200 transition hover:bg-[#8a424e] hover:-translate-y-0.5"
             >
               Conheça nossos serviços

@@ -23,7 +23,7 @@ const SOCIAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="w-full bg-[#9f515e] text-white pt-16 pb-6 px-6 md:px-10 lg:px-14 overflow-hidden">
+    <footer id="contato" className="w-full bg-[#9f515e] text-white pt-16 pb-6 px-6 md:px-10 lg:px-14 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-8 mb-16 relative">
           {/* Coluna Esquerda: Logo, Menu, Horários */}

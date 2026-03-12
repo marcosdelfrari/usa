@@ -2,22 +2,59 @@
 
 import Image from "next/image";
 import { ArrowRight, Phone } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
+
+const PARALLAX_FACTOR = 0.35;
 
 export function Hero() {
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(typeof window !== "undefined" && window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const imageWrapper = imageWrapperRef.current;
+    if (!imageWrapper) return;
+
+    const handleScroll = () => {
+      const rect = imageWrapper.getBoundingClientRect();
+      const sectionTop = rect.top + window.scrollY;
+      const scrollIntoSection = Math.max(0, window.scrollY - sectionTop);
+      const offset = scrollIntoSection * PARALLAX_FACTOR;
+      imageWrapper.style.transform = `translate3d(0, ${offset}px, 0)`;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMobile]);
+
   return (
     <section className="relative w-full overflow-hidden bg-[#9f515e]">
       <div className="mx-auto grid min-h-[70vh] w-full max-w-[1440px] grid-cols-1 md:grid-cols-2">
-        {/* Coluna esquerda: Imagem */}
-        <div className="relative h-[400px] w-full md:order-2 md:h-full lg:min-h-[600px]">
+        {/* Coluna esquerda: Imagem com parallax no mobile */}
+        <div
+          ref={imageWrapperRef}
+          className="relative h-[400px] w-full md:order-2 md:h-full lg:min-h-[600px] md:!transform-none"
+        >
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#9f515e]/80 via-transparent to-transparent md:bg-gradient-to-l md:from-[#9f515e]/60" />
-          <Image
-            src="/header.jpg"
-            alt="Atendimento veterinário com carinho"
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
+          <div className="absolute inset-0 md:relative">
+            <Image
+              src="/header.jpg"
+              alt="Atendimento veterinário com carinho"
+              fill
+              className="object-cover object-center md:object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
         </div>
 
         {/* Coluna direita: Texto */}
@@ -35,7 +72,7 @@ export function Hero() {
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <a
-              href="#contact"
+              href="#contato"
               className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-[#9f515e] shadow-lg shadow-rose-900/20 transition hover:bg-rose-50 hover:shadow-xl hover:-translate-y-0.5"
             >
               Agendar agora
