@@ -47,7 +47,7 @@ export function Hero() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
             <a
-              href="https://wa.me/5531982885745"
+              href="tel:+5531982885745"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/5 px-8 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/10 hover:border-white/50"
