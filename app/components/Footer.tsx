@@ -16,8 +16,16 @@ const HOURS = [
 ] as const;
 
 const SOCIAL_LINKS = [
-  { icon: Instagram, href: "https://www.instagram.com/unidadedesaudeanimal", label: "Instagram" },
-  { icon: MessageCircle, href: "https://wa.me/5531982885745", label: "WhatsApp" },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/unidadedesaudeanimal",
+    label: "Instagram",
+  },
+  {
+    icon: MessageCircle,
+    href: "https://wa.me/5531982885745",
+    label: "WhatsApp",
+  },
 ];
 
 export function Footer() {
@@ -112,12 +120,6 @@ export function Footer() {
                 >
                   (31) 98288-5745
                 </a>
-                <a
-                  href="mailto:contato@usa.com.br"
-                  className="text-2xl md:text-4xl lg:text-5xl font-light tracking-tight opacity-90 hover:opacity-100 transition-opacity break-all lg:break-normal"
-                >
-                  contato@usa.com.br
-                </a>
               </div>
             </div>
           </div>
@@ -129,14 +131,7 @@ export function Footer() {
             © {new Date().getFullYear()} USA - Unidade de Saúde Animal. Todos os
             direitos reservados.
           </p>
-          <div className="flex gap-6">
-            <Link href="#" className="hover:text-white transition-colors">
-              Termos de Uso
-            </Link>
-            <Link href="#" className="hover:text-white transition-colors">
-              Privacidade
-            </Link>
-          </div>
+          <div className="flex gap-6"></div>
         </div>
       </div>
     </footer>
