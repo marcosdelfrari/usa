@@ -24,9 +24,9 @@ export function HowWeWorkSection() {
   return (
     <section
       id="como-funciona"
-      className="w-full bg-white px-6 py-24 md:px-10 lg:px-14 xl:py-32"
+      className="w-full bg-white px-4 py-24 md:px-10 lg:px-14 xl:py-32"
     >
-      <div className="mx-auto max-w-7xl bg-[#e8ddde] rounded-3xl p-8">
+      <div className="mx-auto max-w-7xl bg-[#e8ddde] rounded-4xl p-8">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24">
           {/* Imagem */}
           <div className="relative order-2 lg:order-1 flex justify-center">
