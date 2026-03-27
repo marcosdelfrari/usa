@@ -68,7 +68,10 @@ export function Footer() {
                       <span className="tabular-nums tracking-tight">
                         {item.time}
                       </span>
-                      <span className="px-2 py-0.5 rounded border border-white/30 text-[10px] uppercase font-bold tracking-wide bg-white/5">
+                      <span
+                        translate="no"
+                        className="px-2 py-0.5 rounded border border-white/30 text-[10px] uppercase font-bold tracking-wide bg-white/5"
+                      >
                         {item.label}
                       </span>
                     </div>
