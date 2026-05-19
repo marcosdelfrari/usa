@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "Quem somos", href: "#quem-somos" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Benefícios", href: "#beneficios" },
+  { label: "FAQ", href: "#faq" },
 ] as const;
 
 export function Header() {
