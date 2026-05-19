@@ -23,9 +23,10 @@ export const SITE_GEO = {
 
 export const SITE_HOURS = "Mo-Su 09:00-21:00";
 
+export const SITE_WHATSAPP_URL = "http://wa.me/31982885745";
+
 export const SITE_SOCIAL = {
   instagram: "https://www.instagram.com/unidadedesaudeanimal",
-  whatsapp: "https://wa.me/5531982885745",
-  whatsappContact: "https://wa.me/5531984181921",
+  whatsapp: SITE_WHATSAPP_URL,
   maps: "https://maps.app.goo.gl/NHQiTC51xZ6a596r7",
 } as const;

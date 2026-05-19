@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ArrowRight, Phone } from "lucide-react";
+import { SITE_SOCIAL } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -38,7 +39,7 @@ export function Hero() {
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <a
-              href="https://wa.me/5531982885745"
+              href={SITE_SOCIAL.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-base font-bold text-[#9f515e] shadow-lg shadow-black/10 transition hover:bg-[#e8ddde] hover:shadow-xl hover:-translate-y-0.5"

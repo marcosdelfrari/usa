@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle, Menu, X } from "lucide-react";
+import { SITE_SOCIAL } from "@/lib/site";
 import { useState, useCallback, useEffect } from "react";
 
 const NAV_LINKS = [
@@ -63,7 +64,7 @@ export function Header() {
       {/* Botão de Contato */}
       <div className="hidden md:flex items-center gap-4">
         <a
-          href="https://wa.me/5531982885745"
+          href={SITE_SOCIAL.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-2 rounded-full bg-[#9f515e] px-6 py-2.5 text-sm font-bold text-white shadow-md shadow-[#9f515e]/30 transition hover:bg-[#7d4049] hover:-translate-y-0.5"
@@ -128,7 +129,7 @@ export function Header() {
               </Link>
             ))}
             <a
-              href="https://wa.me/5531982885745"
+              href={SITE_SOCIAL.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}

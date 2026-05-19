@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Instagram, MessageCircle } from "lucide-react";
+import { SITE_SOCIAL } from "@/lib/site";
 
 // Dados de funcionamento simulados
 const HOURS = [
@@ -23,7 +24,7 @@ const SOCIAL_LINKS = [
   },
   {
     icon: MessageCircle,
-    href: "https://wa.me/5531982885745",
+    href: SITE_SOCIAL.whatsapp,
     label: "WhatsApp",
   },
 ];
@@ -116,7 +117,7 @@ export function Footer() {
               {/* Contatos Gigantes */}
               <div className="flex flex-col items-start lg:items-end gap-0">
                 <a
-                  href="https://wa.me/5531982885745"
+                  href={SITE_SOCIAL.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight hover:opacity-80 transition-opacity"

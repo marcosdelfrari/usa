@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Instagram, MapPin, Globe, MessageCircle, Share } from "lucide-react";
 import { Metadata } from "next";
+import { SITE_SOCIAL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Links e Contato - WhatsApp, Instagram e Localização",
@@ -31,7 +32,7 @@ export default function LinktreePage() {
   const links = [
     {
       title: "Agende pelo WhatsApp",
-      url: "https://wa.me/5531984181921",
+      url: SITE_SOCIAL.whatsapp,
       icon: MessageCircle,
     },
     {
@@ -52,7 +53,7 @@ export default function LinktreePage() {
   ];
 
   const socials = [
-    { icon: MessageCircle, url: "https://wa.me/5531984181921" },
+    { icon: MessageCircle, url: SITE_SOCIAL.whatsapp },
     { icon: Instagram, url: "https://www.instagram.com/unidadedesaudeanimal?igsh=bzh6d2xmbTNyNWQ0" },
     { icon: Globe, url: "https://www.unidadedesaudeanimal.com.br" },
     { icon: MapPin, url: "https://maps.app.goo.gl/NHQiTC51xZ6a596r7?g_st=iw" },
