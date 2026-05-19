@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Instagram, MapPin, Globe, MessageCircle, Share } from "lucide-react";
+import { Instagram, MapPin, Globe, MessageCircle } from "lucide-react";
+import { ShareButton } from "./ShareButton";
 import { Metadata } from "next";
 import { SITE_SOCIAL } from "@/lib/site";
 
@@ -62,10 +63,7 @@ export default function LinktreePage() {
   return (
     <div className="min-h-screen bg-[#9f515e] flex flex-col items-center py-12 px-4 relative font-sans">
       <h1 className="sr-only">USA — Links e contato</h1>
-      {/* Botão de Compartilhar */}
-      <button className="absolute top-6 right-6 w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#9f515e] hover:bg-gray-100 transition-colors shadow-md">
-        <Share size={20} />
-      </button>
+      <ShareButton />
 
       {/* Seção de Perfil */}
       <div className="flex flex-col items-center mb-10 mt-4">
